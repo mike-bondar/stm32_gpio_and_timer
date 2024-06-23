@@ -64,7 +64,7 @@ usart1_start(uint32_t clock_speed)
 
   usart_start(clock_speed, usart);
 
-  NVIC->ISER[37 >> 5] = 1 << (37 & 0x1F);
+  NVIC->ISER[37 >> 5] |= 1 << (37 & 0x1F);
 
   return usart;
 }
